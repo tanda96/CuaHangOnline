@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.tnt.cuahangonline.activity.DienThoaiActivity">
+    <android.support.v7.widget.Toolbar
+        android:background="#aca9a8"
+        app:titleTextColor="#f7f7f7"
+        app:title="Điện Thoại"
+        android:id="@+id/toolbardienthoai"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+    <ListView
+        android:id="listviewdienthoai"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    </ListView>
+</LinearLayout>
