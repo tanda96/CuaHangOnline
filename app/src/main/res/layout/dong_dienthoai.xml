@@ -28,7 +28,7 @@
                     android:layout_margin="5dp"
                     android:id="@+id/textviewdienthoai"
                     android:textColor="#0037ff"
-                    android:text="Tên sản phẩm"
+                    android:text="Tên Sản Phẩm"
                     android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
