@@ -27,7 +27,7 @@
                 android:text="Trang Chủ"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:textColor="#cf1d02"
+                android:textColor="#fa3b3b"
               />
         </android.support.v7.widget.Toolbar>
 
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="#f20"
                 android:layout_margin="5dp"
