@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CuaHangOnline.iml" filepath="$PROJECT_DIR$/.idea/CuaHangOnline.iml" />
       <module fileurl="file://$PROJECT_DIR$/CuaHangOnline.iml" filepath="$PROJECT_DIR$/CuaHangOnline.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\Hoc tap\NAM 4\Android\de tai\CuaHangOnline\.idea\CuaHangOnline.iml" filepath="E:\Hoc tap\NAM 4\Android\de tai\CuaHangOnline\.idea\CuaHangOnline.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
