@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
     <ListView
-        android:id="listviewdienthoai"
+        android:id="@+id/listviewdienthoai"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
