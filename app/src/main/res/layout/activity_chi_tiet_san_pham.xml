@@ -6,15 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.tnt.cuahangonline.activity.ChiTietSanPham">
-<android.support.v7.widget.Toolbar
-    android:id="@+id/toolbarchitietsanpham"
-    android:background="#63bdf9"
-    app:titleTextColor="#fff"
-    app:title="Chi tiết sản phẩm"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarchitietsanpham"
+        android:background="#63bdf9"
+        app:titleTextColor="#fff"
+        app:title="Chi tiết sản phẩm"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
 
-</android.support.v7.widget.Toolbar>
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -43,12 +43,15 @@
                 android:id="@+id/textviewgiachitietsanpham"
                 android:text="Giá sản phẩm"
                 android:textStyle="bold"
-                android:textColor="#000"
+                android:textColor="#e151d2"
                 android:layout_margin="10dp"
-                android:textSize="21sp"
+                android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Spinner
+                android:layout_margin="3dp"
+                android:padding="15dp"
+                android:background="@drawable/spinner"
                 android:textAlignment="center"
                 android:id="@+id/spinner"
                 android:layout_marginTop="10dp"
