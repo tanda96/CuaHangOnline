@@ -44,6 +44,7 @@ public class DienThoaiActivity extends AppCompatActivity {
     ArrayList<Sanpham> mangdt;
     int iddt = 0;
     int page = 1;
+
     View footerview;
     boolean isLoading = false;
     boolean limitdata = false;
