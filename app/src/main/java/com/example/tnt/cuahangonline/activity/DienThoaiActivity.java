@@ -71,7 +71,7 @@ public class DienThoaiActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getApplicationContext(),ChiTietSanPham.class);
-                intent.putExtra("thongtinsanpham0",mangdt.get(i));
+                intent.putExtra("thongtinsanpham",mangdt.get(i));
                 startActivity(intent);
             }
         });
