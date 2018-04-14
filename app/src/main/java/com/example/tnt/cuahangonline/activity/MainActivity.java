@@ -29,6 +29,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.tnt.cuahangonline.R;
 import com.example.tnt.cuahangonline.adapter.LoaispAdapter;
 import com.example.tnt.cuahangonline.adapter.SanphamAdapter;
+import com.example.tnt.cuahangonline.model.Giohang;
 import com.example.tnt.cuahangonline.model.Loaisp;
 import com.example.tnt.cuahangonline.model.Sanpham;
 import com.example.tnt.cuahangonline.ultil.CheckConnection;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     String hinhanhloaisp = "";
     ArrayList<Sanpham> mangsanpham;
     SanphamAdapter sanphamAdapter;
+    public static ArrayList<Giohang> manggiohang;
 
 
     @Override
@@ -265,6 +267,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerviewmahinhchinh.setHasFixedSize(true);
         recyclerviewmahinhchinh.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
         recyclerviewmahinhchinh.setAdapter(sanphamAdapter);
+        if (manggiohang !=null) {
+
+        }else{
+            manggiohang =new ArrayList<>();
+
+        }
 
 
 

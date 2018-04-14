@@ -1,5 +1,6 @@
 package com.example.tnt.cuahangonline.activity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.support.test.espresso.core.internal.deps.protobuf.Internal;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.tnt.cuahangonline.R;
+import com.example.tnt.cuahangonline.model.Giohang;
 import com.example.tnt.cuahangonline.model.Sanpham;
 import com.squareup.picasso.Picasso;
 
@@ -25,6 +27,12 @@ public class ChiTietSanPham extends AppCompatActivity {
     TextView txtten,txtgia,txtmota;
     Button btndatmua;
     Spinner spinner;
+    int id = 0;
+    String Tenchitiet = "";
+    int GiaChitiet = 0;
+    String HinhanhChitiet = "";
+    String MotaChitiet ="";
+    int idsanpham = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +41,43 @@ public class ChiTietSanPham extends AppCompatActivity {
         ActitonToolBar();
         GetInfomation();
         CatchEventSpinner();
+        EventButton();
 
+
+    }
+
+    private void EventButton() {
+        btndatmua.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if (MainActivity.manggiohang.size() >0){
+                    int sl = Integer.parseInt(spinner.getSelectedItem().toString());
+                    boolean exists = false;
+                    for (int i = 0 ;i<MainActivity.manggiohang.size();i++ ){
+                        if (MainActivity.manggiohang.get(i).getIdsp()==id){
+                            MainActivity.manggiohang.get(i).setSoluongsp(MainActivity.manggiohang.get(i).getSoluongsp() + sl);
+                            if (MainActivity.manggiohang.get(i).getSoluongsp() >=10){
+                                MainActivity.manggiohang.get(i).setSoluongsp(10);
+                            }
+                            MainActivity.manggiohang.get(i).setGiasp(GiaChitiet * MainActivity.manggiohang.get(i).getSoluongsp());
+                            exists = true;
+                        }
+                    }
+                    if (exists = false){
+                        int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
+                        long Giamoi = soluong * GiaChitiet;
+                        MainActivity.manggiohang.add(new Giohang(id, Tenchitiet,Giamoi,HinhanhChitiet,soluong));
+                    }
+            } else{
+                    int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
+                    long Giamoi = soluong * GiaChitiet;
+                    MainActivity.manggiohang.add(new Giohang(id, Tenchitiet,Giamoi,HinhanhChitiet,soluong));
+                }
+                Intent intent = new Intent(getApplicationContext(), com.example.tnt.cuahangonline.activity.Giohang.class);
+                startActivity(intent);
+            }
+
+        });
     }
 
     private void CatchEventSpinner() {
@@ -43,12 +87,7 @@ public class ChiTietSanPham extends AppCompatActivity {
     }
 
     private void GetInfomation() {
-        int id = 0;
-        String Tenchitiet = "";
-        int GiaChitiet = 0;
-        String HinhanhChitiet = "";
-        String MotaChitiet ="";
-        int idsanpham = 0;
+
         Sanpham sanpham = (Sanpham) getIntent().getSerializableExtra("thongtinsanpham");
         id = sanpham.getID();
         Tenchitiet = sanpham.getTensanpham();
