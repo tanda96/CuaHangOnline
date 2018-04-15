@@ -68,6 +68,7 @@
                 android:gravity="center">
 
                 <TextView
+                    android:id="@+id/textviewtongtien"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Giá trị"
@@ -91,7 +92,7 @@
         android:textColor="#0088ff"
         android:textSize="20dp"
         android:text="Tiếp tục mua hàng"
-        android:id="@+id/buttontieptucthanhtoan"
+        android:id="@+id/buttontieptucmuahang"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp" />

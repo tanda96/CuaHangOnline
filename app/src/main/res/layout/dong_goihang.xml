@@ -36,7 +36,7 @@
             android:text="Giá món hàng"
             android:textSize="15dp"
             android:textColor="#f20"
-            android:id="@+id/textviewgiamonhang"
+            android:id="@+id/textviewgiagiohang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <LinearLayout
