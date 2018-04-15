@@ -81,7 +81,7 @@ public class ChiTietSanPham extends AppCompatActivity {
                             exists = true;
                         }
                     }
-                    if (exists = false){
+                    if (exists == false){
                         int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
                         long Giamoi = soluong * GiaChitiet;
                         MainActivity.manggiohang.add(new Giohang(id, Tenchitiet,Giamoi,HinhanhChitiet,soluong));
