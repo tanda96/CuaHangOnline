@@ -17,8 +17,6 @@ import com.squareup.picasso.Picasso;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-import static com.example.tnt.cuahangonline.R.id.buttonminus;
-
 public class GiohangAdapter extends BaseAdapter {
 
     Context context;

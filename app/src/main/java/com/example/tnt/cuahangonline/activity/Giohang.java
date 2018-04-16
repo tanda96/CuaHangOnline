@@ -3,6 +3,7 @@ package com.example.tnt.cuahangonline.activity;
 import android.app.AlertDialog;
 import android.app.usage.UsageEvents;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.Toolbar;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 
 import com.example.tnt.cuahangonline.R;
 import com.example.tnt.cuahangonline.adapter.GiohangAdapter;
+import com.example.tnt.cuahangonline.ultil.CheckConnection;
 
 import java.text.DecimalFormat;
 
@@ -42,6 +44,29 @@ public class Giohang extends AppCompatActivity {
         Checkdata();
         EventUltil();
         CactchOnItemListVIew();
+        EventButton();
+    }
+
+    private void EventButton() {
+        btntieptucmua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnthanhtoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (MainActivity.manggiohang.size() > 0){
+                    Intent intent = new Intent(getApplicationContext(),Thongtinkhachhang.class);
+                    startActivity(intent);
+
+                }else {
+                    CheckConnection.ShowToast_Short(getApplicationContext(),"Giỏ hàng bạn chưa có sản phẩm để thanh toán");
+                }
+            }
+        });
     }
 
     private void CactchOnItemListVIew() {
