@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 3:
                         if(CheckConnection.haveNetworkConnection(getApplicationContext())){
-                            Intent intent = new Intent(MainActivity.this,LienHeActivity.class);
+                            Intent intent = new Intent(MainActivity.this,MapsActivity.class);
                             startActivity(intent);
                         }else{
                             CheckConnection.ShowToast_Short(getApplicationContext(),"kiem tra lai ket noi");
