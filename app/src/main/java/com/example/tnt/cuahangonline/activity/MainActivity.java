@@ -142,6 +142,15 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 4:
                         if(CheckConnection.haveNetworkConnection(getApplicationContext())){
+                            Intent intent = new Intent(MainActivity.this,DonHangActivity.class);
+                            startActivity(intent);
+                        }else{
+                            CheckConnection.ShowToast_Short(getApplicationContext(),"kiem tra lai ket noi");
+                        }
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case 5:
+                        if(CheckConnection.haveNetworkConnection(getApplicationContext())){
                             Intent intent = new Intent(MainActivity.this,ThongTinActivity.class);
                             startActivity(intent);
                         }else{
@@ -219,8 +228,10 @@ public class MainActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
-                    mangloaisp.add(3, new Loaisp(0,"Liên Hệ","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1z4of9iJFuOwovWZeU26KDXjSagPho7gCfNdGKSBG33a8QXjBEw"));
-                    mangloaisp.add(4,new Loaisp(0,"Thông Tin","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BQnz139MsvCm0X2GbguODHavJPAkURF_BfDa_xZtoQq2t5dl"));
+                    mangloaisp.add(3, new Loaisp(0,"Map","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1z4of9iJFuOwovWZeU26KDXjSagPho7gCfNdGKSBG33a8QXjBEw"));
+                    mangloaisp.add(4,new Loaisp(0,"Đơn hàng","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BQnz139MsvCm0X2GbguODHavJPAkURF_BfDa_xZtoQq2t5dl"));
+                    mangloaisp.add(5,new Loaisp(0,"Thông tin","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BQnz139MsvCm0X2GbguODHavJPAkURF_BfDa_xZtoQq2t5dl"));
+
                 }
             }
         }, new Response.ErrorListener() {

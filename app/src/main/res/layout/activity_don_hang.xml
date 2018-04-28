@@ -5,18 +5,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tnt.cuahangonline.activity.DienThoaiActivity">
+    tools:context="com.example.tnt.cuahangonline.activity.DonHangActivity">
     <android.support.v7.widget.Toolbar
         android:background="#5dbded"
         app:titleTextColor="#f7f7f7"
-        app:title="Điện Thoại"
-        android:id="@+id/toolbardienthoai"
+        app:title="Đơn hàng"
+        android:id="@+id/toolbardonhang"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize">
-
-    </android.support.v7.widget.Toolbar>
+        android:layout_height="?android:attr/actionBarSize"></android.support.v7.widget.Toolbar>
     <ListView
-        android:id="@+id/listviewdienthoai"
+        android:id="@+id/listviewdonhang"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

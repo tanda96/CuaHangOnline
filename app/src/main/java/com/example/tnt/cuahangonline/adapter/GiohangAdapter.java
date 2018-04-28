@@ -51,7 +51,7 @@ public class GiohangAdapter extends BaseAdapter {
         if (view == null){
             viewHolder = new ViewHolder();
             LayoutInflater inflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.dong_goihang,null);
+            view = inflater.inflate(R.layout.dong_giohang,null);
             viewHolder.txttengiohang =(TextView) view.findViewById(R.id.textviewtengiohang);
             viewHolder.txtgiagiohang = (TextView) view.findViewById(R.id.textviewgiagiohang);
             viewHolder.imggiohang = (ImageView) view.findViewById(R.id.imageviewgiohang);
