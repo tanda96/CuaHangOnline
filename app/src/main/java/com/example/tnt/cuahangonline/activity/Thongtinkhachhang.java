@@ -58,6 +58,8 @@ public class Thongtinkhachhang extends AppCompatActivity {
                 final String sdt = edtsodienthoai.getText().toString().trim();
                 final String email = edtemail.getText().toString().trim();
                 if (ten.length()>0 && sdt.length()>0 && email.length()>0){
+                    sendEmail();
+
                     RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdandonhang, new Response.Listener<String>() {
                         @Override
@@ -140,5 +142,19 @@ public class Thongtinkhachhang extends AppCompatActivity {
         edtsodienthoai =(EditText) findViewById(R.id.edittextsodienthoai);
         btnxacnhan = (Button) findViewById(R.id.buttonxacnhan);
         btntrove =(Button) findViewById(R.id.buttontrove);
+    }
+
+
+    private void sendEmail() {
+        //Getting content for email
+        String email = edtemail.getText().toString().trim();
+        String subject = Server.subject;
+        String message = Server.message_1;
+
+        //Creating SendMail object
+        SendMail sm = new SendMail(this, email, subject, message);
+
+        //Executing sendmail to send email
+        sm.execute();
     }
 }
