@@ -1,8 +1,12 @@
 package com.example.tnt.cuahangonline.activity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -54,12 +58,13 @@ public class Thongtinkhachhang extends AppCompatActivity {
         btnxacnhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final String imei = GetImeiKhachHang();
                 final String ten = edttenkhachhang.getText().toString().trim();
                 final String sdt = edtsodienthoai.getText().toString().trim();
                 final String email = edtemail.getText().toString().trim();
                 if (ten.length()>0 && sdt.length()>0 && email.length()>0){
+                    //gui mail cho khach hang khi dat hang thanh cong
                     sendEmail();
-
                     RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdandonhang, new Response.Listener<String>() {
                         @Override
@@ -100,6 +105,7 @@ public class Thongtinkhachhang extends AppCompatActivity {
                                                 jsonObject.put("soluongsanpham",MainActivity.manggiohang.get(i).getSoluongsp());
 
 
+
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
@@ -125,10 +131,13 @@ public class Thongtinkhachhang extends AppCompatActivity {
                             hashMap.put("tenkhachhang",ten);
                             hashMap.put("sodienthoai",sdt);
                             hashMap.put("email",email);
+                            hashMap.put("imei", imei);
+                           // System.out.println(imei+"day la imei");
                             return hashMap;
                         }
                     };
                     requestQueue.add(stringRequest);
+
                 }else {
                     CheckConnection.ShowToast_Short(getApplicationContext(),"Hãy kiểm tra lại dữ liệu");
                 }
@@ -143,7 +152,22 @@ public class Thongtinkhachhang extends AppCompatActivity {
         btnxacnhan = (Button) findViewById(R.id.buttonxacnhan);
         btntrove =(Button) findViewById(R.id.buttontrove);
     }
+    private String GetImeiKhachHang() {
+        TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return "Error";
+        }
+        String imei = tm.getDeviceId();
+        return imei;
 
+    }
 
     private void sendEmail() {
         //Getting content for email
@@ -157,4 +181,5 @@ public class Thongtinkhachhang extends AppCompatActivity {
         //Executing sendmail to send email
         sm.execute();
     }
+
 }
