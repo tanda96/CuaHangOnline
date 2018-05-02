@@ -1,13 +1,11 @@
 package com.example.tnt.cuahangonline.activity;
 
-import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -17,7 +15,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -37,7 +34,6 @@ import com.example.tnt.cuahangonline.model.Sanpham;
 import com.example.tnt.cuahangonline.ultil.CheckConnection;
 import com.example.tnt.cuahangonline.ultil.Server;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Request;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -133,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 3:
                         if(CheckConnection.haveNetworkConnection(getApplicationContext())){
-                            Intent intent = new Intent(MainActivity.this,MapsActivity.class);
+                            Intent intent = new Intent(MainActivity.this, DonHangActivity.class);
                             startActivity(intent);
                         }else{
                             CheckConnection.ShowToast_Short(getApplicationContext(),"kiem tra lai ket noi");
@@ -142,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 4:
                         if(CheckConnection.haveNetworkConnection(getApplicationContext())){
-                            Intent intent = new Intent(MainActivity.this,DonHangActivity.class);
+                            Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                             startActivity(intent);
                         }else{
                             CheckConnection.ShowToast_Short(getApplicationContext(),"kiem tra lai ket noi");
@@ -228,8 +224,8 @@ public class MainActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
-                    mangloaisp.add(3, new Loaisp(0,"Map","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1z4of9iJFuOwovWZeU26KDXjSagPho7gCfNdGKSBG33a8QXjBEw"));
-                    mangloaisp.add(4,new Loaisp(0,"Đơn hàng","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BQnz139MsvCm0X2GbguODHavJPAkURF_BfDa_xZtoQq2t5dl"));
+                    mangloaisp.add(3, new Loaisp(0, "Đơn hàng", "http://www.xuatnhapcanh.com.vn/images/cat/M___u_visa_th____th___c.png"));
+                    mangloaisp.add(4, new Loaisp(0, "Map", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlbgIQ1je-bBNLLtKscM8WODFFGPPb4U2JTK4gYzWiTPRoskcB"));
                     mangloaisp.add(5,new Loaisp(0,"Thông tin","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BQnz139MsvCm0X2GbguODHavJPAkURF_BfDa_xZtoQq2t5dl"));
 
                 }
