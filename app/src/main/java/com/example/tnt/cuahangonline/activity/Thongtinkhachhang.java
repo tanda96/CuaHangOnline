@@ -62,6 +62,11 @@ public class Thongtinkhachhang extends AppCompatActivity {
                 final String ten = edttenkhachhang.getText().toString().trim();
                 final String sdt = edtsodienthoai.getText().toString().trim();
                 final String email = edtemail.getText().toString().trim();
+                if (imei == "error") {
+
+                    android.os.Process.killProcess(android.os.Process.myPid());
+                    System.exit(1);
+                }
                 if (ten.length()>0 && sdt.length()>0 && email.length()>0){
                     //gui mail cho khach hang khi dat hang thanh cong
                     sendEmail();
@@ -162,6 +167,7 @@ public class Thongtinkhachhang extends AppCompatActivity {
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
+
             return "Error";
         }
         String imei = tm.getDeviceId();

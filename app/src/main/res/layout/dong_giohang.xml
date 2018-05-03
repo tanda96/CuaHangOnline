@@ -71,6 +71,16 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content" />
 
+            <Button
+
+                android:focusable="false"
+                android:text="xóa"
+                android:id="@+id/buttonxoa"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp"
+                android:layout_width="50dp"
+                android:layout_height="58dp" />
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
