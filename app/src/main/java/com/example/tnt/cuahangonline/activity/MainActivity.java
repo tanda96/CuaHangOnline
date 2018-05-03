@@ -17,6 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -50,11 +51,14 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ArrayList<Loaisp> mangloaisp;
     LoaispAdapter loaispAdapter;
+    TextView sp_noi_bat,sp_moinhat;
     int id = 0;
     String tenloaisp = "";
     String hinhanhloaisp = "";
     ArrayList<Sanpham> mangsanpham;
-    SanphamAdapter sanphamAdapter;
+    ArrayList<Sanpham> mangsanphamnoibat;
+
+    SanphamAdapter sanphamAdapter, sanphamNoibatAdapter;
     public static ArrayList<Giohang> manggiohang;
 
 
@@ -68,7 +72,23 @@ public class MainActivity extends AppCompatActivity {
             ActionViewFliper();
             getDuLieuLoaisp();
             getDuLieuLoaispMoiNhat();
+            getDuLieuSPnoiBat();
             CatchOnItemListView();
+
+            sp_noi_bat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    sanphamNoibatAdapter = new SanphamAdapter(getApplicationContext(), mangsanphamnoibat);
+                    recyclerviewmahinhchinh.setAdapter(sanphamNoibatAdapter);
+                }
+            });
+            sp_moinhat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    sanphamAdapter = new SanphamAdapter(getApplicationContext(), mangsanpham);
+                    recyclerviewmahinhchinh.setAdapter(sanphamAdapter);
+                }
+            });
 
         }else{
             CheckConnection.ShowToast_Short(getApplicationContext(),"Bạn Hãy Kiểm Tra Lại Kết Nối");
@@ -201,6 +221,48 @@ public class MainActivity extends AppCompatActivity {
         });
         requestQueue.add(jsonArrayRequest);
     }
+    private void getDuLieuSPnoiBat() {
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Server.Duongdansanphamnoibat, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                if (response != null ){
+                    int ID = 0;
+                    String Tensanpham ="";
+                    Integer Giasanpham =0;
+                    String Hinhanhsanpham ="";
+                    String Motasanpham ="";
+                    int IDsanpham =0;
+                    for(int i=0;i < response.length();i++){
+                        try {
+                            JSONObject jsonObject = response.getJSONObject(i);
+                            ID = jsonObject.getInt("id");
+                            Tensanpham = jsonObject.getString("tensp");
+                            Giasanpham = jsonObject.getInt("giasp");
+                            Hinhanhsanpham = jsonObject.getString("hinhanhsp");
+                            Motasanpham = jsonObject.getString("motasp");
+                            IDsanpham = jsonObject.getInt("idsanpham");
+                            mangsanphamnoibat.add(new Sanpham(ID,Tensanpham,Giasanpham,Hinhanhsanpham,Motasanpham,IDsanpham));
+                            sanphamNoibatAdapter.notifyDataSetChanged();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }else{
+
+                    Toast.makeText(MainActivity.this,
+                            "Ko co data", Toast.LENGTH_LONG).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        requestQueue.add(jsonArrayRequest);
+    }
 
     private void getDuLieuLoaisp() {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -278,6 +340,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void AnhXa() {
+        sp_noi_bat = findViewById(R.id.sp_noi_bat);
+        sp_moinhat = findViewById(R.id.sp_moi_nhat);
         toolbar = findViewById(R.id.toolbarManhinchinh);
         viewFlipper = findViewById(R.id.viewFlipper);
         recyclerviewmahinhchinh = findViewById(R.id.recycleview);
@@ -288,7 +352,9 @@ public class MainActivity extends AppCompatActivity {
         loaispAdapter = new LoaispAdapter(mangloaisp, getApplicationContext());
         listviewManhinhChinh.setAdapter(loaispAdapter);
         mangsanpham = new ArrayList<>();
+        mangsanphamnoibat = new ArrayList<>();
         sanphamAdapter = new SanphamAdapter(getApplicationContext(), mangsanpham);
+        sanphamNoibatAdapter = new SanphamAdapter(getApplicationContext(), mangsanphamnoibat);
         recyclerviewmahinhchinh.setHasFixedSize(true);
         recyclerviewmahinhchinh.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
         recyclerviewmahinhchinh.setAdapter(sanphamAdapter);
