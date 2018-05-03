@@ -42,7 +42,7 @@ public class GiohangAdapter extends BaseAdapter {
     public class ViewHolder{
         public TextView txttengiohang,txtgiagiohang;
         public ImageView imggiohang;
-        public Button btnminus,btnvalues,btnplus;
+        public Button btnminus, btnvalues, btnplus, btnXoa;
     }
     @Override
     public View getView(final int i, View view, ViewGroup viewGroup) {
@@ -58,6 +58,7 @@ public class GiohangAdapter extends BaseAdapter {
             viewHolder.btnminus = (Button) view.findViewById(R.id.buttonminus);
             viewHolder.btnvalues = (Button)view.findViewById(R.id.buttonvalues);
             viewHolder.btnplus =(Button) view.findViewById(R.id.buttonplus);
+            viewHolder.btnXoa = (Button) view.findViewById(R.id.buttonxoa);
             view.setTag(viewHolder);
             } else {
             viewHolder = (ViewHolder) view.getTag();
@@ -134,6 +135,16 @@ public class GiohangAdapter extends BaseAdapter {
                     }
                 }
             });
+        final ViewHolder finalViewHolder2 = viewHolder;
+        viewHolder.btnXoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.manggiohang.remove(i);
+                notifyDataSetChanged();
+                com.example.tnt.cuahangonline.activity.Giohang.EventUltil();
+
+            }
+        });
             return view;
     }
 }
