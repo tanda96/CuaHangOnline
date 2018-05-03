@@ -234,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
                     String Hinhanhsanpham ="";
                     String Motasanpham ="";
                     int IDsanpham =0;
+                    int noibat = 0;
                     for(int i=0;i < response.length();i++){
                         try {
                             JSONObject jsonObject = response.getJSONObject(i);
@@ -243,7 +244,8 @@ public class MainActivity extends AppCompatActivity {
                             Hinhanhsanpham = jsonObject.getString("hinhanhsp");
                             Motasanpham = jsonObject.getString("motasp");
                             IDsanpham = jsonObject.getInt("idsanpham");
-                            mangsanphamnoibat.add(new Sanpham(ID,Tensanpham,Giasanpham,Hinhanhsanpham,Motasanpham,IDsanpham));
+                            noibat = jsonObject.getInt("noibat");
+                            mangsanphamnoibat.add(new Sanpham(ID,Tensanpham,Giasanpham,Hinhanhsanpham,Motasanpham,IDsanpham,noibat));
                             sanphamNoibatAdapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();

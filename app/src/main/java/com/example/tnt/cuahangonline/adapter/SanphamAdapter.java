@@ -40,6 +40,11 @@ public class SanphamAdapter extends RecyclerView.Adapter<SanphamAdapter.ItemHold
         holder.txttensanpham.setText(sanpham.getTensanpham());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.txtgiasanpham.setText("Giá:" + decimalFormat.format(sanpham.getGiasanpham())+"VNĐ");
+        if(sanpham.getNobat() == 1){
+            holder.iconspmoinhat.setBackgroundResource(R.drawable.noibat);
+        }else {
+            holder.iconspmoinhat.setBackgroundResource(R.drawable.moi1);
+        }
         Picasso.with(context).load(sanpham.getHinhanhsangpham())
                 .placeholder(R.drawable.moiimg)
                 .error(R.drawable.error)
@@ -54,11 +59,12 @@ public class SanphamAdapter extends RecyclerView.Adapter<SanphamAdapter.ItemHold
     }
 
     public class ItemHolder extends RecyclerView.ViewHolder{
-        public ImageView imghinhsanpham;
+        public ImageView imghinhsanpham, iconspmoinhat;
         public TextView txttensanpham,txtgiasanpham;
 
         public ItemHolder(View itemView){
             super(itemView);
+            iconspmoinhat = (ImageView) itemView.findViewById(R.id.iconspmoinhat);
             imghinhsanpham = (ImageView) itemView.findViewById(R.id.imageviewsanpham);
             txtgiasanpham = (TextView) itemView.findViewById(R.id.textviewgiasanpham);
             txttensanpham = (TextView) itemView.findViewById(R.id.textviewtensanpham);
