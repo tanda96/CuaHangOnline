@@ -54,4 +54,10 @@ public class Giohang {
     public void setSoluongsp(int soluongsp) {
         this.soluongsp = soluongsp;
     }
+
+    @Override
+    public String toString() {
+        return tensp + " | "+ giasp +
+                "VNĐ | Số lượng: " + soluongsp+" sản phẩm" ;
+    }
 }

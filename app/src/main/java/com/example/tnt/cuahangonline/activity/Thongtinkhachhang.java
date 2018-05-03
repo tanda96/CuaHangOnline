@@ -186,7 +186,10 @@ public class Thongtinkhachhang extends AppCompatActivity {
         long gia = MainActivity.manggiohang.get(0).getGiasp();
         String msg = "Cảm ơn bạn đã mua hàng tại cửa hàng chúng tôi! \n" +
                 "Thông tin đơn hàng: \n" +
-                "Sản phẩm: \n" + sanpham + "Tổng giá: " + gia + "vnđ";
+                "Sản phẩm: \n" + sanpham + "Tổng giá: " + gia + " VNĐ\n"+
+                "Đơn hàng của quý khách sẽ được duyệt trong thời gian sớm nhất \n\n"+
+                "Xin Cảm Ơn.\n"+
+                "Phelek.";
 
 
 

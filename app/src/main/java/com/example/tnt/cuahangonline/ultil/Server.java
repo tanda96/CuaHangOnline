@@ -14,16 +14,6 @@ public class Server {
 
     public static final String EMAIL ="phong@conceptual.studio";
     public static final String PASSWORD ="Mz1j8a1adgjm";
-    public static final String subject ="CONFIRM ORDER";
-    public static final String message_1 ="Thanks your order with \n" +
-            "I wanted to thank you for your interest in (insert the name of the product or the service offered).\n" +
-            "\n" +
-            "I enjoyed the conversation we had the other day and hope I was able to answer all your questions that you had in your mind.\n" +
-            "\n" +
-            "Please feel free to contact me if you have any other queries.\n" +
-            "\n" +
-            "I am also attaching a little gift for you, a (insert the name of the gift), it has my phone number along with the website address. So this will help you to find me and you can easily contact me again in the future.\n" +
-            "\n" +
-            "I look forward to hearing from you soon.";
+    public static final String subject ="Xác Nhận Mua Hàng Phelek";
 
 }
