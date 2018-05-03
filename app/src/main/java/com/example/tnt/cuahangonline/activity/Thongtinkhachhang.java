@@ -178,7 +178,10 @@ public class Thongtinkhachhang extends AppCompatActivity {
             sanpham += MainActivity.manggiohang.get(i).getTensp() + "    " + "x" + MainActivity.manggiohang.get(i).getSoluongsp() + "\n";
         }
         long gia = MainActivity.manggiohang.get(0).getGiasp();
-        String msg = "Sản phẩm: \n" + sanpham + "Tổng giá: " + gia + "vnđ";
+        String msg = "Cảm ơn bạn đã mua hàng tại cửa hàng chúng tôi! \n" +
+                "Thông tin đơn hàng: \n" +
+                "Sản phẩm: \n" + sanpham + "Tổng giá: " + gia + "vnđ";
+
 
 
         //Creating SendMail object
