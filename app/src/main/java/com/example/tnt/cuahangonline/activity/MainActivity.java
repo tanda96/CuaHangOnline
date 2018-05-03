@@ -224,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
+                    mangloaisp.add(0, new Loaisp(0, "Trang Chính", "http://icons.iconarchive.com/icons/fps.hu/free-christmas-flat-circle/512/home-icon.png"));
                     mangloaisp.add(3, new Loaisp(0, "Đơn hàng", "http://www.xuatnhapcanh.com.vn/images/cat/M___u_visa_th____th___c.png"));
                     mangloaisp.add(4, new Loaisp(0, "Map", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlbgIQ1je-bBNLLtKscM8WODFFGPPb4U2JTK4gYzWiTPRoskcB"));
                     mangloaisp.add(5,new Loaisp(0,"Thông tin","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BQnz139MsvCm0X2GbguODHavJPAkURF_BfDa_xZtoQq2t5dl"));
@@ -284,7 +285,6 @@ public class MainActivity extends AppCompatActivity {
         listviewManhinhChinh = findViewById(R.id.listviewManhinhchinh);
         drawerLayout = findViewById(R.id.drawerLayout);
         mangloaisp = new ArrayList<>();
-        mangloaisp.add(0, new Loaisp(0, "Trang Chính", "http://icons.iconarchive.com/icons/fps.hu/free-christmas-flat-circle/512/home-icon.png"));
         loaispAdapter = new LoaispAdapter(mangloaisp, getApplicationContext());
         listviewManhinhChinh.setAdapter(loaispAdapter);
         mangsanpham = new ArrayList<>();

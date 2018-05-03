@@ -3,9 +3,9 @@ package com.example.tnt.cuahangonline.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
@@ -173,10 +173,16 @@ public class Thongtinkhachhang extends AppCompatActivity {
         //Getting content for email
         String email = edtemail.getText().toString().trim();
         String subject = Server.subject;
-        String message = Server.message_1;
+        String sanpham = "";
+        for (int i = 0; i < MainActivity.manggiohang.size(); i++) {
+            sanpham += MainActivity.manggiohang.get(i).getTensp() + "    " + "x" + MainActivity.manggiohang.get(i).getSoluongsp() + "\n";
+        }
+        long gia = MainActivity.manggiohang.get(0).getGiasp();
+        String msg = "Sản phẩm: \n" + sanpham + "Tổng giá: " + gia + "vnđ";
+
 
         //Creating SendMail object
-        SendMail sm = new SendMail(this, email, subject, message);
+        SendMail sm = new SendMail(this, email, subject, msg);
 
         //Executing sendmail to send email
         sm.execute();
