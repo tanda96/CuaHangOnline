@@ -289,9 +289,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     mangloaisp.add(0, new Loaisp(0, "Trang Chính", "http://icons.iconarchive.com/icons/fps.hu/free-christmas-flat-circle/512/home-icon.png"));
-                    mangloaisp.add(3, new Loaisp(0, "Đơn hàng", "http://www.xuatnhapcanh.com.vn/images/cat/M___u_visa_th____th___c.png"));
-                    mangloaisp.add(4, new Loaisp(0, "Map", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlbgIQ1je-bBNLLtKscM8WODFFGPPb4U2JTK4gYzWiTPRoskcB"));
-                    mangloaisp.add(5,new Loaisp(0,"Thông tin","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BQnz139MsvCm0X2GbguODHavJPAkURF_BfDa_xZtoQq2t5dl"));
+                    mangloaisp.add(3, new Loaisp(0, "Đơn hàng", "https://cdn2.iconfinder.com/data/icons/flaturici-set-6/512/invoice-512.png"));
+                    mangloaisp.add(4, new Loaisp(0, "Map", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNp4oVSNGUUg5vYUHF01PrjmYc4560RxlkNJiOa8HFkY9qC5Su"));
+                    mangloaisp.add(5,new Loaisp(0,"Thông tin","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvfa96VN3g2ju72BcNyJIQuRzwjsIwX_xrGHIByMgny8VUTJCx"));
 
                 }
             }
