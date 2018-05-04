@@ -19,7 +19,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tnt.cuahangonline.R;
-import com.example.tnt.cuahangonline.activity.DonHangActivity;
 import com.example.tnt.cuahangonline.model.DonHang;
 import com.example.tnt.cuahangonline.ultil.CheckConnection;
 import com.example.tnt.cuahangonline.ultil.Server;
@@ -27,9 +26,6 @@ import com.example.tnt.cuahangonline.ultil.Server;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-import static android.app.PendingIntent.getActivity;
-import static com.example.tnt.cuahangonline.activity.DonHangActivity.*;
 
 
 public class DonHangAdapter  extends BaseAdapter {
@@ -135,15 +131,15 @@ public class DonHangAdapter  extends BaseAdapter {
                     sanpham+= arrayDonHang.get(i).getThongTinDonHangs().get(j).getTenSanPham()+"   x"+arrayDonHang.get(i).getThongTinDonHangs().get(j).getSoLuongSanPham()+" \n";
                 }
                 gia = arrayDonHang.get(i).getThongTinDonHangs().get(0).getGiaSanPham();
-                /*AlertDialog.Builder ab = new AlertDialog.Builder(DonHangActivity.getActivity(),android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth)
-                        .setTitle(id)
-                        .setMessage("Sản Phẩm: \n"+sanpham+"Giá: "+ gia)
+                AlertDialog.Builder ab = new AlertDialog.Builder(view.getRootView().getContext(), android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth)
+                        .setTitle("Mã đơn hàng: " + id)
+                        .setMessage("Sản Phẩm: \n" + sanpham + "Tổng Giá: " + gia + "  VNĐ")
                         .setPositiveButton("OK",null);
                 AlertDialog dialog = ab.create();
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.setCancelable(false);
-                dialog.show();*/
-                CheckConnection.ShowToast_Short(context,"Tên sản phẩm: \n"+sanpham+"Tổng giá: "+gia);
+                dialog.show();
+                //CheckConnection.ShowToast_Short(context,"Tên sản phẩm: \n"+sanpham+"Tổng giá: "+gia);
 
             }
         });
