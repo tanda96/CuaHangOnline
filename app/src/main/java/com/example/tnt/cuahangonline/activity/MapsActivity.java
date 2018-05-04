@@ -73,9 +73,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
+
         mMap.setMyLocationEnabled(true);
-        LatLng location = new LatLng(10.7712952,106.6889006);
-        mMap.addMarker(new MarkerOptions().position(location).title("Shop Online Phleek").snippet("97 Man Thiện Quận 9 Phường Hiệp Phú, Quận 9 , TPHCM").icon(BitmapDescriptorFactory.defaultMarker()));
+        LatLng location = new LatLng(10.789676,106.701085);
+        mMap.addMarker(new MarkerOptions().position(location).title("Shop Online Phleek").snippet("11 Nguyễn Đình Chiểu, P. Đa Kao, Q.1 TP Hồ Chí Minh").icon(BitmapDescriptorFactory.defaultMarker()));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         CameraPosition cameraposition = new CameraPosition.Builder().target(location).zoom(40).build();
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraposition));

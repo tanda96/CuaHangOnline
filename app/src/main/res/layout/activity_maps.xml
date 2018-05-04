@@ -40,7 +40,7 @@
                 android:layout_margin="20dp"
                 android:drawableLeft="@drawable/addresss"
                 android:gravity="center"
-                android:text="Địa Chỉ: 97 Man Thiện Quận 9 Phường Hiệp Phú, Quận 9 , TPHCM"
+                android:text="Địa Chỉ: 11 Nguyễn Đình Chiểu, P. Đa Kao, Q.1 TP Hồ Chí Minh"
                 android:textColor="#000"
                 android:textSize="22sp" />
         </LinearLayout>
