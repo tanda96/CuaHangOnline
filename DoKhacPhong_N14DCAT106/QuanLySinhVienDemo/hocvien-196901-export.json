@@ -1,0 +1,16 @@
+{
+  "SinhVien" : {
+    "-LB4rvpM3pU3Db4XPB5-" : {
+      "email" : "12321@fadmail.aom",
+      "gender" : true,
+      "name" : "nha",
+      "phone" : "132312321"
+    },
+    "-LB4s6u7P1nTqfEUMDYs" : {
+      "email" : "lam@gmail.com",
+      "gender" : true,
+      "name" : "luong hoang lam",
+      "phone" : "123123123213"
+    }
+  }
+}
